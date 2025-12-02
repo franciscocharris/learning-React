@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Gif Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for searching and displaying GIFs using the Giphy API. The application features a clean, responsive interface with search functionality, previous search tracking, and efficient caching.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a React-based GIF search application that allows users to discover and share GIFs. It implements a real-time search with debouncing, maintains a history of previous searches, and caches results for improved performance.
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Core
+- **React 19.1.0** - UI library for building the user interface
+- **TypeScript 5.8.3** - Static type checking
+- **Vite 6.3.5** - Build tool and development server
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### HTTP & API
+- **Axios 1.9.0** - HTTP client for API requests
+- **Giphy API** - External service for GIF data
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development Tools
+- **ESLint 9.25.0** - Code linting
+- **TypeScript ESLint 8.30.1** - TypeScript-specific linting rules
+- **SWC** - Fast TypeScript/JavaScript compiler
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Styling
+- **Custom CSS** - Responsive grid layout with mobile-first approach
+- **Montserrat Alternates** - Google Font
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Features
+
+- Real-time GIF search with 700ms debounce
+- Previous search terms tracking (up to 8 recent searches)
+- Click-to-search from previous terms
+- Client-side caching of search results
+- Responsive grid layout (2 to 5 columns based on screen size)
+- Keyboard support (Enter key to search)
+
+## Architecture
+
+The application follows a modular structure with clear separation of concerns:
+
+- **Components** - Reusable UI components in `src/shared/components` and `src/gifs/components`
+- **Hooks** - Custom React hooks in `src/gifs/hooks/useGifs.tsx`
+- **Actions** - API interaction logic in `src/gifs/actions/get-gifs-by-query.action.ts`
+- **API Configuration** - Axios instance in `src/gifs/api/giphy.api.ts`
+- **Interfaces** - TypeScript type definitions in `src/gifs/interfaces`
+
+## Configuration
+
+The application requires a Giphy API key to be set in the environment variables. A template is provided in `.env.template`.
+
+## Author
+
+**Francisco M. Charris C.**
+
+Full Stack Web Developer
+
+## License
+
+Private project
