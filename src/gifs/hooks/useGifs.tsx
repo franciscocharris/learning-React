@@ -9,12 +9,13 @@ export const useGifs = () => {
 
     const handleTermClicked = async (term: string) => {
         // console.log({gifsCache});
-        if(gifsCache.current[term]){
+        if (gifsCache.current[term]) {
             setGifs(gifsCache.current[term]);
             return;
         }
         const gifs = await getGifsByQuery(term);
         setGifs(gifs);
+        gifsCache.current[term] = gifs;
     };
 
     const handleSearch = async (query: string = '') => {

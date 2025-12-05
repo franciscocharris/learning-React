@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyCounterApp with mock > should render the component 1`] = `
+<div>
+  <div
+    style="display: flex; flex-direction: column; align-items: center;"
+  >
+    <h1>
+      counter: 
+      22
+    </h1>
+    <div
+      style="display: flex; gap: 10px;"
+    >
+      <button>
+        +1
+      </button>
+      <button>
+        -1
+      </button>
+      <button>
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+`;

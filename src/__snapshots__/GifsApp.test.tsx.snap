@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GifsApp > should render component propertly 1`] = `
+<div>
+  <div
+    class="content-center"
+  >
+    <h1>
+      Buscador de Gifs
+    </h1>
+    <p>
+      Descubre y comparte el Gif perfecto
+    </p>
+    <a
+      class="credito"
+      href="https://www.facebook.com/profile.php?id=100013541311546"
+    >
+      por: Francisco M. Charris C.
+    </a>
+  </div>
+  <div
+    class="search-container"
+  >
+    <input
+      placeholder="Busca lo que quieras"
+      type="text"
+      value=""
+    />
+    <button>
+      Buscar
+    </button>
+  </div>
+  <div
+    class="previous-searches"
+  >
+    <h2>
+      Búsquedas previas
+    </h2>
+    <ul
+      class="previous-searches-list"
+    />
+  </div>
+  <div
+    class="gifs-container"
+  />
+</div>
+`;
